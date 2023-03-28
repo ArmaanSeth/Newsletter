@@ -6,6 +6,8 @@ const request=require("request")
 const https=require("https")
 const { send } = require("process")
 
+const apikey="" //ADD APIKEY
+
 app.use(bodyParser.urlencoded({extended:true}))
 app.use(favicon(__dirname+"/public/images/icon.ico"))
 app.use(express.static("public"))
@@ -39,7 +41,7 @@ app.post("/",function(req,res){
 
     const options={
         method:"POST",
-        auth:"armaan:b5233d171745e3063655359fd4a7bedf-us21"
+        auth:"armaan:"+apikey
     }
 
     const request=https.request(url,options,function(response){
